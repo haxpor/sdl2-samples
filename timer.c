@@ -1,3 +1,9 @@
+/*
+ * Sample code showing how to use SDL_AddTimer which will execute
+ * code in another non-main thread, along with showing how to send
+ * parameter to such callback function.
+ */
+
 #include <SDL2/SDL.h>
 
 struct Param
