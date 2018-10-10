@@ -1,8 +1,11 @@
 /*
- * Template code
+ * Sample for testing following functions
+ * - SDL_AndroidGetExternalStoragePath
+ * - SDL_AndroidGetExternalStorageState
+ * - SDL_AndroidGetInternalStoragePath
  */
 
-#include <SDL2/SDL.h>
+#include "SDL.h"
 
 int main(int argc, char *argv[]) {
 	SDL_bool done;
@@ -30,7 +33,17 @@ int main(int argc, char *argv[]) {
 
 	done = SDL_FALSE;
 
-	// user-defined code here...
+	// user-defined code
+	SDL_Log("Android's external storage path: %s", SDL_AndroidGetExternalStoragePath());
+	int storageState = SDL_AndroidGetExternalStorageState();
+	if ((storageState & SDL_ANDROID_EXTERNAL_STORAGE_READ) == SDL_ANDROID_EXTERNAL_STORAGE_READ) {
+		SDL_Log("- external storage is readable");
+	}
+	if ((storageState & SDL_ANDROID_EXTERNAL_STORAGE_WRITE) == SDL_ANDROID_EXTERNAL_STORAGE_WRITE) {
+		SDL_Log("- external storage is writeable");
+	}
+
+	SDL_Log("Android's internal storage path: %s", SDL_AndroidGetInternalStoragePath());
 
 	while (!done) {
 		while (!done && SDL_PollEvent(&event)) {
