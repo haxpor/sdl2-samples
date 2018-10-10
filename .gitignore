@@ -2,3 +2,5 @@
 *.dSYM
 *.swp
 *.swo
+*.o
+**/.externalNativeBuild
