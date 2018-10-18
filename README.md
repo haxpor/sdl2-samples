@@ -9,6 +9,8 @@ Sample code along the way of finishing [sdl2-manpage](https://github.com/haxpor/
 
 To test on android
 
+We have two android project for version 2.0.8 and 2.0.9 (development snapshot as of 1 Oct 2018). Choose one that is suitable for your sample code.
+
 * symlink your SDL2 source code directory to `android-project/app/jni` - do this once
 * copy testing `.c` source file into `android-project/app/jni/src`
 * modify `Android.mk` in `android-project/app/jni/src` to include testing source file, see comment in the file

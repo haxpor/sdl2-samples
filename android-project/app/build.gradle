@@ -9,7 +9,7 @@ else {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    buildToolsVersion "26.0.1"
     defaultConfig {
         if (buildAsApplication) {
             applicationId "org.libsdl.app"
@@ -21,27 +21,13 @@ android {
         externalNativeBuild {
             ndkBuild {
                 arguments "APP_PLATFORM=android-14"
+                abiFilters 'armeabi-v7a', 'x86'
             }
         }
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-		ndk {
-			abiFilters 'armeabi-v7a', 'arm64-v8a'
-		}
     }
-	packagingOptions {
-		doNotStrip '*/mips/*.so'
-		doNotStrip '*/mips64/*.so'
-	}
     buildTypes {
-		debug {
-			ndk {
-				abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
-			}
-		}
         release {
-			ndk {
-				abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
-			}
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
