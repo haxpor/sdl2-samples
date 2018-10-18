@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Volumes/Slave/Data/Projects/sdl2-samples/android-project/app/src/main/jniLibs"/><source path="/Volumes/Slave/Data/Projects/sdl2-samples/android-project/app/libs"/></dataSet><dataSet config="debug"><source path="/Volumes/Slave/Data/Projects/sdl2-samples/android-project/app/src/debug/jniLibs"/></dataSet></merger>
