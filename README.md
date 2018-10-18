@@ -14,5 +14,17 @@ To test on android
 * modify `Android.mk` in `android-project/app/jni/src` to include testing source file, see comment in the file
 * execute `./gradlew installDebug` to build and install the app on your Android device
 
+To test on ios
+
+* remove broken of included sub-project as seen in project navigation pane
+* add `<your SDL source directory>/Xcode-iOS/SDL/SDL.xcodeproj` as a sub-project
+* add more sdl2 sample source code into `src` directory by right click and add files in Xcode
+* set "Header Search Path" in Build Settings for your target properly, it should be aligned with headers as referenced by SDL project as you recently added
+* create a new target if needed to run each new sample as you added
+
+> There is rectangles sample already added there, so you can see for example.
+
+You can read more about how to manually come up with this iOS sample project from my blog [here](https://blog.wasin.io/2018/10/19/build-sdl2-application-on-ios.html).
+
 # License
 MIT, Wasin Thonkaew
